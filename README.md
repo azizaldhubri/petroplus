@@ -1,16 +1,52 @@
-# React + Vite
+# مشروع حوافز للعملاء
+ 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+#الغرض من المشروع  هو تحفيز الزباين للتسجيل في النظام بحيث يحصلوا على مكافأة عند وصولهم للكميات التالية 1000 لتر لحجم السيارة الصغير و 2000 لتر لتر لحجم السيارة المتوسطة و 3000 لتر للحجم الكبير -- حيث عند وصول العمييل لهذه الكمية يتم صرف بدلة زيت مجانا
+## التقنيات المستخدمه في المشروع
 
-Currently, two official plugins are available:
+ المشروع عبارة عن واجهة امامية وخلفية واستخدمت التقنيات التالية :
+ React.js , Material_-Ui , BooTstrap , Context,React Hooks ,  Localstorage , laravel
+ 
+ 
+       
+### نماذج من المشروع (Screenshots) 
+- - -
+الواجهه الرئيسية للمشروع</br><br/> 
+![واجهة التطبيق](https://azizaldhubri.github.io/Vehicles/images/1.PNG)  </br><br/>
+ 
+ 
+واجهة إضافة عميل جديد </br><br/>
+![واجهة التطبيق](https://azizaldhubri.github.io/Vehicles/images/2.PNG)  </br><br/></br><br/>
+واجهة عرض العملاء  </br><br/>
+![واجهة التطبيق](https://azizaldhubri.github.io/Vehicles/images/3.PNG)  </br></br><br/>
+واجهة ادخال تعبية بنزين للزبون   </br><br/>
+![واجهة التطبيق](https://azizaldhubri.github.io/Vehicles/images/4.PNG)  </br><br/>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## React Compiler
+واجهة ادخال تعبية بنزين للزبون   </br><br/>
+![واجهة التطبيق](https://azizaldhubri.github.io/Vehicles/images/4.PNG)  </br><br/>
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+ 
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+واجهة عرض العملاء الذي حصلوا على المكافأة </br><br/>
+![واجهة التطبيق](https://azizaldhubri.github.io/Vehicles/images/6.PNG)  </br><br/>
+ 
+ 
+ 
+
+واجهة عرض العملاء الذين صرفت لهم المكافأة  </br><br/>
+![واجهة التطبيق](https://azizaldhubri.github.io/Vehicles/images/7.PNG)  </br><br/>
+ 
+
+
+ 
+
+واجهة الرئسية    </br><br/>
+![واجهة التطبيق](https://azizaldhubri.github.io/Vehicles/images/5.PNG)  </br><br/>
+ 
+ 
+ - - - 
+
+
+ 
