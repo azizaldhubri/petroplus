@@ -1,0 +1,19 @@
+@import "node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// تخصيص الألوان
+// $primary: #3498db; /* لون Primary */
+$primary: #c43408; /* لون Primary */
+$secondary: #2ecc71; /* لون Secondary */
+$success: #1abc9c; /* لون Success */
+$danger: #e74c3c; /* لون Danger */
+$warning: #f1c40f; /* لون Warning */
+$info: #3498db; /* لون Info */
+$light: #ecf0f1; /* لون Light */
+$dark: #2c3e50; /* لون Dark */
+
+// استيراد باقي أجزاء Bootstrap
+@import "node_modules/bootstrap/scss/bootstrap";

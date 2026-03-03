@@ -1,0 +1,367 @@
+/* Modern Navigation Bar Styles */
+
+:root {
+  --nav-primary: #488AC7;
+  --nav-primary-hover: #5a9dd4;
+  --nav-active: #c43408;
+  --nav-text: #2c3e50;
+  --nav-bg: #ffffff;
+  --nav-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --transition-speed: 0.3s;
+}
+
+.modern-navigation {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: var(--nav-bg);
+  box-shadow: var(--nav-shadow);
+  z-index: 9999;
+  border-bottom: 2px solid rgba(72, 138, 199, 0.1);
+  transition: all var(--transition-speed) ease;
+  overflow: visible;
+}
+
+.nav-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+  overflow: visible;
+  position: relative;
+}
+
+/* Desktop Navigation */
+.nav-desktop {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  padding: 0.75rem 0;
+  /* overflow-x: auto; */
+  /* overflow-y: visible; */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(72, 138, 199, 0.3) transparent;
+  position: relative;
+}
+
+.nav-desktop::-webkit-scrollbar {
+  height: 4px;
+}
+
+.nav-desktop::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.nav-desktop::-webkit-scrollbar-thumb {
+  background: rgba(72, 138, 199, 0.3);
+  border-radius: 2px;
+}
+
+.nav-item-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.nav-main-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: var(--nav-text);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-speed) ease;
+  text-decoration: none;
+  white-space: nowrap;
+  font-family: 'Cairo', sans-serif;
+}
+
+.nav-main-item:hover {
+  background: rgba(72, 138, 199, 0.1);
+  color: var(--nav-primary);
+  transform: translateY(-1px);
+}
+
+.nav-main-item.active {
+  background: linear-gradient(135deg, rgba(196, 52, 8, 0.1) 0%, rgba(196, 52, 8, 0.15) 100%);
+  color: var(--nav-active);
+  font-weight: 600;
+}
+
+.nav-icon {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.nav-text {
+  display: flex;
+  align-items: center;
+}
+
+/* Dropdown Menu */
+.nav-dropdown {
+  /* 
+    سبب عدم عمل z-index أحيانًا هو أن العنصر الأب للـ .nav-dropdown (مثل .nav-item-wrapper)
+    قد لا يكون لديه position غير static، في هذه الحالة الزد-اندكس لن يعمل كما هو متوقع.
+    الحل: تأكد أن .nav-item-wrapper لديها position: relative أو أي قيمة غير static.
+  */
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  min-width: 220px;
+  background: var(--nav-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  padding: 0.5rem;
+  z-index: 10001; /* سيعمل لو أن الأبوين position: relative أو absolute أو fixed ...إلخ */
+  animation: slideDown 0.2s ease;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nav-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  color: var(--nav-text);
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all var(--transition-speed) ease;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.nav-dropdown-item:hover {
+  background: rgba(72, 138, 199, 0.1);
+  color: var(--nav-primary);
+  transform: translateX(-4px);
+  padding-right: 1.25rem;
+}
+
+.nav-dropdown-item.active {
+  background: linear-gradient(135deg, rgba(196, 52, 8, 0.1) 0%, rgba(196, 52, 8, 0.15) 100%);
+  color: var(--nav-active);
+  font-weight: 600;
+  border-right: 3px solid var(--nav-active);
+}
+
+.nav-icon-small {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  opacity: 0.7;
+}
+
+/* Mobile Navigation */
+.mobile-menu-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1rem;
+  background: transparent;
+  border: none;
+  color: var(--nav-text);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all var(--transition-speed) ease;
+}
+
+.mobile-menu-button:hover {
+  background: rgba(72, 138, 199, 0.1);
+  color: var(--nav-primary);
+}
+
+.nav-mobile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10000;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.nav-mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 280px;
+  max-width: 85vw;
+  height: 100vh;
+  background: var(--nav-bg);
+  box-shadow: -4px 0 16px rgba(0, 0, 0, 0.2);
+  z-index: 10001;
+  display: flex;
+  flex-direction: column;
+  animation: slideInRight 0.3s ease;
+  overflow-y: auto;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.mobile-menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border-bottom: 2px solid rgba(72, 138, 199, 0.1);
+  background: linear-gradient(135deg, #488AC7 0%, #5a9dd4 100%);
+  color: white;
+}
+
+.mobile-menu-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.mobile-menu-header button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.mobile-menu-header button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.mobile-menu-content {
+  padding: 1rem 0;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.mobile-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background: transparent;
+  border: none;
+  color: var(--nav-text);
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: right;
+  cursor: pointer;
+  transition: all var(--transition-speed) ease;
+  text-decoration: none;
+  font-family: 'Cairo', sans-serif;
+  border-right: 3px solid transparent;
+}
+
+.mobile-menu-item:hover {
+  background: rgba(72, 138, 199, 0.1);
+  color: var(--nav-primary);
+  border-right-color: var(--nav-primary);
+}
+
+.mobile-menu-item.active {
+  background: linear-gradient(135deg, rgba(196, 52, 8, 0.1) 0%, rgba(196, 52, 8, 0.15) 100%);
+  color: var(--nav-active);
+  font-weight: 600;
+  border-right-color: var(--nav-active);
+}
+
+.mobile-menu-item.expanded {
+  background: rgba(72, 138, 199, 0.15);
+  color: var(--nav-primary);
+}
+
+.mobile-menu-icon {
+  display: flex;
+  align-items: center;
+  font-size: 1.25rem;
+}
+
+.mobile-submenu {
+  background: rgba(72, 138, 199, 0.05);
+  padding: 0.5rem 0;
+  animation: slideDown 0.2s ease;
+}
+
+.mobile-submenu-item {
+  display: block;
+  padding: 0.75rem 1.5rem 0.75rem 3rem;
+  color: var(--nav-text);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all var(--transition-speed) ease;
+  border-right: 3px solid transparent;
+}
+
+.mobile-submenu-item:hover {
+  background: rgba(72, 138, 199, 0.1);
+  color: var(--nav-primary);
+  padding-right: 2rem;
+}
+
+.mobile-submenu-item.active {
+  background: linear-gradient(135deg, rgba(196, 52, 8, 0.1) 0%, rgba(196, 52, 8, 0.15) 100%);
+  color: var(--nav-active);
+  font-weight: 600;
+  border-right-color: var(--nav-active);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .modern-navigation {
+    top: 65px;
+  }
+  
+  .nav-container {
+    padding: 0;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-menu-button {
+    display: none;
+  }
+}
